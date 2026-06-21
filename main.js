@@ -27,17 +27,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Active Navigation Link Highlighting based on current filename
+  // Active Navigation Link Highlighting based on current pathname
   const navLinks = document.querySelectorAll('.nav-link');
+  
+  const normalizePath = (path) => {
+    if (!path) return '';
+    return path
+      .split('/')
+      .filter(Boolean)
+      .pop()
+      ?.replace('.html', '')
+      ?.toLowerCase() || 'index';
+  };
+
   const currentPath = window.location.pathname;
-  const currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
+  let currentSegment = normalizePath(currentPath);
+  if (currentSegment === '' || currentSegment === '/' || currentSegment === 'rzsolutions') {
+    currentSegment = 'index';
+  }
 
   navLinks.forEach(link => {
     const linkHref = link.getAttribute('href');
-    if (linkHref === currentFile || (currentFile === 'index.html' && linkHref === './') || (currentFile === '' && linkHref === 'index.html')) {
+    let linkSegment = normalizePath(linkHref);
+    
+    if (linkSegment === currentSegment) {
       link.classList.add('nav-link-active');
       link.classList.remove('text-zinc-400');
       link.classList.add('text-teal-400');
+    } else {
+      link.classList.remove('nav-link-active');
+      link.classList.remove('text-teal-400');
+      link.classList.add('text-zinc-400');
     }
   });
 
