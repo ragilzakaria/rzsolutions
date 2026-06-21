@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | RZ Solutions</title>
+  <meta name="description" content="Explore freelance technical consulting services including AI & Data Optimization, Full Stack Web Engineering, and Custom Machine Learning solutions.">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0fdfa',
+              100: '#ccfbf1',
+              200: '#99f6e4',
+              300: '#5eead4',
+              400: '#2dd4bf',
+              500: '#14b8a6',
+              600: '#0d9488',
+              700: '#0f766e',
+              800: '#115e59',
+              900: '#134e4a',
+              950: '#042f2e',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="./style.css">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 min-h-screen flex flex-col bg-grid-pattern relative radial-glow-container">
+  
+  <!-- Radial Glow Background -->
+  <div class="radial-glow absolute inset-0 pointer-events-none z-0"></div>
+
+  <!-- Header / Navigation -->
+  <header class="glass-nav sticky top-0 w-full z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-teal-500 to-cyan-400 flex items-center justify-center shadow-lg shadow-teal-500/20 group-hover:shadow-teal-500/40 transition-all duration-300">
+            <span class="font-mono text-xl font-bold text-zinc-950">RZ</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-white font-bold leading-none text-base group-hover:text-teal-400 transition-colors">RZ Solutions</span>
+            <span class="text-[10px] text-zinc-400 font-mono tracking-wider">AI & SOFTWARE ENG</span>
+          </div>
+        </a>
+
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link text-zinc-400 hover:text-white text-sm font-medium transition-colors">Home</a>
+          <a href="about.html" class="nav-link text-zinc-400 hover:text-white text-sm font-medium transition-colors">About</a>
+          <a href="services.html" class="nav-link text-zinc-400 hover:text-white text-sm font-medium transition-colors">Services</a>
+          <a href="contact.html" class="nav-link text-zinc-400 hover:text-white text-sm font-medium transition-colors">Contact</a>
+        </nav>
+
+        <!-- Desktop Action -->
+        <div class="hidden md:block">
+          <a href="contact.html" class="px-5 py-2.5 bg-zinc-900 hover:bg-zinc-800 text-teal-400 border border-teal-500/30 hover:border-teal-500/60 text-sm font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-teal-500/10">
+            Hire Me
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-btn" type="button" class="p-2.5 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-900 transition-colors focus:outline-none" aria-expanded="false">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-900 bg-zinc-950/95 backdrop-blur-lg">
+      <div class="px-2 pt-3 pb-4 space-y-1">
+        <a href="index.html" class="block px-4 py-3 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-900 text-base font-medium">Home</a>
+        <a href="about.html" class="block px-4 py-3 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-900 text-base font-medium">About</a>
+        <a href="services.html" class="block px-4 py-3 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-900 text-base font-medium">Services</a>
+        <a href="contact.html" class="block px-4 py-3 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-900 text-base font-medium">Contact</a>
+        <div class="pt-4 pb-2 px-4 border-t border-zinc-900">
+          <a href="contact.html" class="block w-full py-3 bg-teal-500 text-zinc-950 text-center font-bold rounded-xl shadow-lg shadow-teal-500/20">
+            Hire Me
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow z-10 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Services Intro Header -->
+      <section class="text-center max-w-3xl mx-auto mb-20">
+        <h1 class="text-xs font-semibold uppercase tracking-wider text-teal-400 font-mono mb-2">Offerings</h1>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">Engineered Consulting Services</h2>
+        <p class="text-zinc-400 mt-4 text-base sm:text-lg">
+          I design robust, customized technical architectures that solve specific data, interface, and prediction challenges for teams worldwide.
+        </p>
+      </section>
+
+      <!-- Services List (Adapt multi-step layout with premium details) -->
+      <section class="space-y-16 mb-24">
+        
+        <!-- Service Card 1: AI & Data Optimization -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 sm:p-12 rounded-3xl bg-zinc-900/40 border border-zinc-850 hover:border-teal-500/20 transition-colors duration-300 fade-in-section">
+          
+          <!-- Content info (Left) -->
+          <div class="lg:col-span-7 flex flex-col space-y-6">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-teal-500/10 border border-teal-500/25 flex items-center justify-center text-teal-400">
+                <i data-lucide="cpu" class="w-5 h-5"></i>
+              </div>
+              <span class="font-mono text-xs text-teal-400 tracking-wider font-semibold">AI Engineering & Vector Storage</span>
+            </div>
+            
+            <h3 class="text-2xl sm:text-3xl font-bold text-white">AI & Data Optimization</h3>
+            <p class="text-zinc-400 leading-relaxed text-sm">
+              I specialize in constructing customized <span class="text-white font-semibold">Hybrid RAG (Retrieval-Augmented Generation)</span> pipelines. By combining vector semantic spaces (Qdrant, Milvus, Pinecone) with sparse keyword queries, I maximize LLM context window relevance. I optimize text chunks, build precise indexing structures, and automate text classification pipelines to ensure speed and accuracy.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="flex items-start gap-2.5 text-xs text-zinc-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-500 shrink-0 mt-0.5"></i>
+                <span>Hybrid Sparse/Dense Vector Architectures</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-zinc-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-500 shrink-0 mt-0.5"></i>
+                <span>Metadata Index filtering configurations</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-zinc-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-500 shrink-0 mt-0.5"></i>
+                <span>LLM Orchestration (LangChain / LlamaIndex)</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-zinc-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-500 shrink-0 mt-0.5"></i>
+                <span>High-throughput JSON parsing pipelines</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature box / tech list (Right) -->
+          <div class="lg:col-span-5 p-6 sm:p-8 rounded-2xl bg-zinc-900 border border-zinc-800 flex flex-col justify-between h-full">
+            <h4 class="font-bold text-white mb-4 text-sm font-mono tracking-wider">PROJECT BLUEPRINT DELIVERABLES</h4>
+            <ul class="space-y-3.5 text-xs text-zinc-400 mb-8">
+              <li class="flex items-center justify-between border-b border-zinc-850 pb-2">
+                <span>Vector DB Ingestion:</span>
+                <span class="text-white font-mono font-semibold">Qdrant, Pinecone</span>
+              </li>
+              <li class="flex items-center justify-between border-b border-zinc-850 pb-2">
+                <span>Context Ingestion Speed:</span>
+                <span class="text-teal-400 font-mono font-semibold">&lt; 150ms latency</span>
+              </li>
+              <li class="flex items-center justify-between border-b border-zinc-850 pb-2">
+                <span>Accuracy Benchmark:</span>
+                <span class="text-white font-mono font-semibold">&gt; 92% Retrieval Precision</span>
+              </li>
+              <li class="flex items-center justify-between pb-2">
+                <span>Infrastructure setup:</span>
+                <span class="text-white font-mono font-semibold">Dockerized pipelines</span>
+              </li>
+            </ul>
+            <a href="contact.html" class="w-full py-3 bg-zinc-955 hover:bg-zinc-850 text-teal-400 hover:text-teal-350 border border-teal-500/20 hover:border-teal-500/50 rounded-xl text-center text-xs font-bold transition-all font-mono">
+              GET AI OPTIMIZATION BLUEPRINT
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Service Card 2: Full Stack Web Engineering -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 sm:p-12 rounded-3xl bg-zinc-900/40 border border-zinc-850 hover:border-cyan-500/20 transition-colors duration-300 fade-in-section">
+          
+          <!-- Content info (Left) -->
+          <div class="lg:col-span-7 flex flex-col space-y-6">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/25 flex items-center justify-center text-cyan-400">
+                <i data-lucide="layout" class="w-5 h-5"></i>
+              </div>
+              <span class="font-mono text-xs text-cyan-400 tracking-wider font-semibold">Interactive UI & Systems Integration</span>
+            </div>
+            
+            <h3 class="text-2xl sm:text-3xl font-bold text-white">Full Stack Web Engineering</h3>
+            <p class="text-zinc-400 leading-relaxed text-sm">
+              I build performant, highly responsive frontend interfaces that make underlying AI operations visible and manageable. Using <span class="text-white font-semibold">React</span> and Next.js, I construct dashboard structures featuring live data streaming via WebSockets, authentication gates, and responsive CSS charts (Tailwind). These frontends communicate with robust FastAPI or Node backends, offering highly secure RESTful schema layouts.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="flex items-start gap-2.5 text-xs text-zinc-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-500 shrink-0 mt-0.5"></i>
+                <span>Responsive React/Next.js client portals</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-zinc-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-500 shrink-0 mt-0.5"></i>
+                <span>WebSocket telemetry streaming</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-zinc-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-500 shrink-0 mt-0.5"></i>
+                <span>Secure API backend integration (FastAPI / JWT)</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-zinc-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-500 shrink-0 mt-0.5"></i>
+                <span>Tailwind CSS layout and design systems</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature box / tech list (Right) -->
+          <div class="lg:col-span-5 p-6 sm:p-8 rounded-2xl bg-zinc-900 border border-zinc-800 flex flex-col justify-between h-full">
+            <h4 class="font-bold text-white mb-4 text-sm font-mono tracking-wider">FRONTEND ARCHITECTURE SUMMARY</h4>
+            <ul class="space-y-3.5 text-xs text-zinc-400 mb-8">
+              <li class="flex items-center justify-between border-b border-zinc-850 pb-2">
+                <span>UI Framework:</span>
+                <span class="text-white font-mono font-semibold">React, Tailwind CSS</span>
+              </li>
+              <li class="flex items-center justify-between border-b border-zinc-850 pb-2">
+                <span>API Architecture:</span>
+                <span class="text-white font-mono font-semibold">RESTful, WebSockets</span>
+              </li>
+              <li class="flex items-center justify-between border-b border-zinc-850 pb-2">
+                <span>First Input Delay:</span>
+                <span class="text-cyan-400 font-mono font-semibold">&lt; 50ms (optimized)</span>
+              </li>
+              <li class="flex items-center justify-between pb-2">
+                <span>State Configuration:</span>
+                <span class="text-white font-mono font-semibold">Redux Toolkit, Context API</span>
+              </li>
+            </ul>
+            <a href="contact.html" class="w-full py-3 bg-zinc-955 hover:bg-zinc-850 text-cyan-400 hover:text-cyan-355 border border-cyan-500/20 hover:border-cyan-500/50 rounded-xl text-center text-xs font-bold transition-all font-mono">
+              GET FULL STACK BLUEPRINT
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Service Card 3: Custom Machine Learning Solutions -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 sm:p-12 rounded-3xl bg-zinc-900/40 border border-zinc-850 hover:border-indigo-500/20 transition-colors duration-300 fade-in-section">
+          
+          <!-- Content info (Left) -->
+          <div class="lg:col-span-7 flex flex-col space-y-6">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/25 flex items-center justify-center text-indigo-400">
+                <i data-lucide="video" class="w-5 h-5"></i>
+              </div>
+              <span class="font-mono text-xs text-indigo-400 tracking-wider font-semibold">Streaming Pipelines & Scientific ML</span>
+            </div>
+            
+            <h3 class="text-2xl sm:text-3xl font-bold text-white">Custom Machine Learning Solutions</h3>
+            <p class="text-zinc-400 leading-relaxed text-sm">
+              I develop specialized machine learning solutions, particularly focusing on real-time computer vision streams and computational chemistry models. Using <span class="text-white font-semibold">NVIDIA Deepstream</span> and GStreamer loops, I compile multi-stream object tracking frameworks for edge applications. In the chemical domain, I write RDKit and PyTorch scripts to model molecules, analyze compounds, and train models for material or biochemical predictions.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="flex items-start gap-2.5 text-xs text-zinc-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-500 shrink-0 mt-0.5"></i>
+                <span>NVIDIA Deepstream vision configurations</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-zinc-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-500 shrink-0 mt-0.5"></i>
+                <span>Real-time GStreamer media pipelines</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-zinc-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-500 shrink-0 mt-0.5"></i>
+                <span>Computational Chemistry (RDKit structural processing)</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-zinc-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-indigo-500 shrink-0 mt-0.5"></i>
+                <span>Containerized GPU Passthrough Docker configuration</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature box / tech list (Right) -->
+          <div class="lg:col-span-5 p-6 sm:p-8 rounded-2xl bg-zinc-900 border border-zinc-800 flex flex-col justify-between h-full">
+            <h4 class="font-bold text-white mb-4 text-sm font-mono tracking-wider">ML MODEL SPECIFICATIONS</h4>
+            <ul class="space-y-3.5 text-xs text-zinc-400 mb-8">
+              <li class="flex items-center justify-between border-b border-zinc-850 pb-2">
+                <span>Streaming Framework:</span>
+                <span class="text-white font-mono font-semibold">Nvidia Deepstream SDK</span>
+              </li>
+              <li class="flex items-center justify-between border-b border-zinc-850 pb-2">
+                <span>Model Architectures:</span>
+                <span class="text-white font-mono font-semibold">CNN, YOLO, LSTM</span>
+              </li>
+              <li class="flex items-center justify-between border-b border-zinc-850 pb-2">
+                <span>Runtime Environment:</span>
+                <span class="text-white font-mono font-semibold">Docker (CUDA core enabled)</span>
+              </li>
+              <li class="flex items-center justify-between pb-2">
+                <span>Inference Performance:</span>
+                <span class="text-indigo-400 font-mono font-semibold">Edge optimized (FP16 / INT8)</span>
+              </li>
+            </ul>
+            <a href="contact.html" class="w-full py-3 bg-zinc-955 hover:bg-zinc-850 text-indigo-400 hover:text-indigo-355 border border-indigo-500/20 hover:border-indigo-500/50 rounded-xl text-center text-xs font-bold transition-all font-mono">
+              GET MACHINE LEARNING BLUEPRINT
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Service Card 4: Session Guitarist & Live Performance -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 sm:p-12 rounded-3xl bg-zinc-900/40 border border-zinc-850 hover:border-violet-500/20 transition-colors duration-300 fade-in-section">
+          
+          <!-- Content info (Left) -->
+          <div class="lg:col-span-7 flex flex-col space-y-6">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-violet-500/10 border border-violet-500/25 flex items-center justify-center text-violet-400">
+                <i data-lucide="music" class="w-5 h-5"></i>
+              </div>
+              <span class="font-mono text-xs text-violet-400 tracking-wider font-semibold">Live Music & Studio Tracking</span>
+            </div>
+            
+            <h3 class="text-2xl sm:text-3xl font-bold text-white">Session Guitarist & Music Performance</h3>
+            <p class="text-zinc-400 leading-relaxed text-sm">
+              I provide professional live guitar accompaniment and high-quality session tracking. Backed by <span class="text-white font-semibold">8 years of playing experience</span> on acoustic, classical, and electric guitars, I am available to perform at café gigs, private events, weddings, or help record clean tracks for your studio productions and YouTube cover projects.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="flex items-start gap-2.5 text-xs text-zinc-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-violet-500 shrink-0 mt-0.5"></i>
+                <span>Acoustic, Classical, and Electric guitar sessions</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-zinc-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-violet-500 shrink-0 mt-0.5"></i>
+                <span>Live café, restaurant, and event gigs</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-zinc-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-violet-500 shrink-0 mt-0.5"></i>
+                <span>Custom fingerstyle arrangements & compositions</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-zinc-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-violet-500 shrink-0 mt-0.5"></i>
+                <span>HQ audio tracking (clean WAV/FLAC files)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature box / tech list (Right) -->
+          <div class="lg:col-span-5 p-6 sm:p-8 rounded-2xl bg-zinc-900 border border-zinc-800 flex flex-col justify-between h-full">
+            <h4 class="font-bold text-white mb-4 text-sm font-mono tracking-wider">MUSIC PORTFOLIO SUMMARY</h4>
+            <ul class="space-y-3.5 text-xs text-zinc-400 mb-8">
+              <li class="flex items-center justify-between border-b border-zinc-850 pb-2">
+                <span>Primary Styles:</span>
+                <span class="text-white font-mono font-semibold">Classical, Fingerstyle, Pop</span>
+              </li>
+              <li class="flex items-center justify-between border-b border-zinc-850 pb-2">
+                <span>Experience:</span>
+                <span class="text-white font-mono font-semibold">8+ Years playing</span>
+              </li>
+              <li class="flex items-center justify-between border-b border-zinc-850 pb-2">
+                <span>Deliverable Format:</span>
+                <span class="text-white font-mono font-semibold">WAV, FLAC, Live Gigs</span>
+              </li>
+              <li class="flex items-center justify-between pb-2">
+                <span>Booking Lead Time:</span>
+                <span class="text-violet-400 font-mono font-semibold">Minimum 1 week notice</span>
+              </li>
+            </ul>
+            <a href="contact.html" class="w-full py-3 bg-zinc-955 hover:bg-zinc-850 text-violet-400 hover:text-violet-355 border border-violet-500/20 hover:border-violet-500/50 rounded-xl text-center text-xs font-bold transition-all font-mono">
+              HIRE AS A GUITARIST
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Service Card 5: 1-on-1 Tutoring & Mentorship -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 sm:p-12 rounded-3xl bg-zinc-900/40 border border-zinc-850 hover:border-emerald-500/20 transition-colors duration-300 fade-in-section mt-16">
+          
+          <!-- Content info (Left) -->
+          <div class="lg:col-span-7 flex flex-col space-y-6">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-400">
+                <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+              </div>
+              <span class="font-mono text-xs text-emerald-400 tracking-wider font-semibold">Custom 1-on-1 Instruction</span>
+            </div>
+            
+            <h3 class="text-2xl sm:text-3xl font-bold text-white">Academic Tutoring & Skill Mentorship</h3>
+            <p class="text-zinc-400 leading-relaxed text-sm">
+              I provide high-quality, personalized 1-on-1 tutoring sessions to help you master technical subjects. Drawing on my background as a top-ranking UGM Computational Chemist, software engineer, and long-time guitarist, I help students write clean code, tackle complex organic chemistry topics, or learn classical and acoustic guitar fingerstyle methods.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="flex items-start gap-2.5 text-xs text-zinc-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Computer Programming (Python, JS, React, SQL)</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-zinc-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Chemistry (Organic Synthesis, Quantum modeling)</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-zinc-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Guitar Instruction (Acoustic, Fingerstyle, Theory)</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-zinc-400">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Custom syllabus design & regular progress reviews</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature box / tech list (Right) -->
+          <div class="lg:col-span-5 p-6 sm:p-8 rounded-2xl bg-zinc-900 border border-zinc-800 flex flex-col justify-between h-full">
+            <h4 class="font-bold text-white mb-4 text-sm font-mono tracking-wider">MENTORSHIP & LESSON DETAILS</h4>
+            <ul class="space-y-3.5 text-xs text-zinc-400 mb-8">
+              <li class="flex items-center justify-between border-b border-zinc-850 pb-2">
+                <span>Core Subjects:</span>
+                <span class="text-white font-mono font-semibold">Coding, Chemistry, Guitar</span>
+              </li>
+              <li class="flex items-center justify-between border-b border-zinc-850 pb-2">
+                <span>Target Levels:</span>
+                <span class="text-white font-mono font-semibold">Beginners to Master's</span>
+              </li>
+              <li class="flex items-center justify-between border-b border-zinc-850 pb-2">
+                <span>Session Platform:</span>
+                <span class="text-white font-mono font-semibold">Zoom, GMeet, Discord</span>
+              </li>
+              <li class="flex items-center justify-between pb-2">
+                <span>Booking Notice:</span>
+                <span class="text-emerald-400 font-mono font-semibold">Minimum 3 days notice</span>
+              </li>
+            </ul>
+            <a href="contact.html" class="w-full py-3 bg-zinc-955 hover:bg-zinc-850 text-emerald-400 hover:text-emerald-355 border border-emerald-500/20 hover:border-emerald-500/50 rounded-xl text-center text-xs font-bold transition-all font-mono">
+              HIRE AS A MENTOR
+            </a>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Collaborative Workflow Process (Adapted from Core Services multi-step layout) -->
+      <section class="py-16 border-t border-zinc-900 fade-in-section">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-teal-400 font-mono mb-2">Methodology</h2>
+          <h3 class="text-3xl font-bold text-white">The Scientific Method of Engineering</h3>
+          <p class="text-zinc-400 mt-3 text-sm">
+            How I collaborate with clients, translating initial observations into production-ready pipelines.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+          <!-- Step 1 -->
+          <div class="p-6 rounded-2xl bg-zinc-900/50 border border-zinc-850 relative">
+            <span class="absolute -top-4 left-6 px-3 py-1 bg-zinc-900 border border-zinc-800 text-teal-400 font-mono text-xs font-bold rounded-lg shadow-lg">PHASE 01</span>
+            <div class="pt-4">
+              <h4 class="text-lg font-bold text-white mb-2">Observation</h4>
+              <p class="text-zinc-400 text-xs leading-relaxed">
+                Analyzing the specific challenge. I examine your datasets, map out complex processing loops, and draft the initial system architectural layout.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="p-6 rounded-2xl bg-zinc-900/50 border border-zinc-850 relative">
+            <span class="absolute -top-4 left-6 px-3 py-1 bg-zinc-900 border border-zinc-800 text-teal-400 font-mono text-xs font-bold rounded-lg shadow-lg">PHASE 02</span>
+            <div class="pt-4">
+              <h4 class="text-lg font-bold text-white mb-2">Synthesis</h4>
+              <p class="text-zinc-400 text-xs leading-relaxed">
+                Building the core logic. I construct clean Python data pipelines, configure vector schemas, and compile initial proof-of-concept models.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="p-6 rounded-2xl bg-zinc-900/50 border border-zinc-850 relative">
+            <span class="absolute -top-4 left-6 px-3 py-1 bg-zinc-900 border border-zinc-800 text-teal-400 font-mono text-xs font-bold rounded-lg shadow-lg">PHASE 03</span>
+            <div class="pt-4">
+              <h4 class="text-lg font-bold text-white mb-2">Refinement</h4>
+              <p class="text-zinc-400 text-xs leading-relaxed">
+                Benchmarking system speeds. I containerize the services using Docker, optimize parameters, and connect the interactive React client interfaces.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="p-6 rounded-2xl bg-zinc-900/50 border border-zinc-850 relative">
+            <span class="absolute -top-4 left-6 px-3 py-1 bg-zinc-900 border border-zinc-800 text-teal-400 font-mono text-xs font-bold rounded-lg shadow-lg">PHASE 04</span>
+            <div class="pt-4">
+              <h4 class="text-lg font-bold text-white mb-2">Launch</h4>
+              <p class="text-zinc-400 text-xs leading-relaxed">
+                Deploying systems to production or edge configurations, establishing continuous deployment streams, and monitoring operational telemetry.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-zinc-950 border-t border-zinc-900 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        
+        <!-- Logo and Brand -->
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-8 rounded-lg bg-teal-500 flex items-center justify-center">
+              <span class="font-mono text-base font-bold text-zinc-950">RZ</span>
+            </div>
+            <span class="text-white font-bold text-lg">RZ Solutions</span>
+          </div>
+          <p class="text-zinc-500 text-sm max-w-sm">
+            Independent software engineering & AI consultant, transforming technical complexities into functional, production-ready systems.
+          </p>
+        </div>
+
+        <!-- Sitemap Quicklinks -->
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-teal-500 font-mono mb-4">Sitemap</h4>
+          <ul class="space-y-2 text-sm text-zinc-400">
+            <li><a href="index.html" class="hover:text-teal-400 transition-colors">Home</a></li>
+            <li><a href="about.html" class="hover:text-teal-400 transition-colors">About</a></li>
+            <li><a href="services.html" class="hover:text-teal-400 transition-colors">Services</a></li>
+            <li><a href="contact.html" class="hover:text-teal-400 transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Location Info -->
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-teal-500 font-mono mb-4">Location</h4>
+          <p class="text-sm text-zinc-400 flex items-start gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-teal-400 shrink-0 mt-0.5"></i>
+            <span>West Java, Indonesia<br><span class="text-zinc-500 text-xs">Available for remote work globally</span></span>
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-500">
+          &copy; 2026 RZ Solutions. All rights reserved.
+        </p>
+        
+        <!-- Socials -->
+        <div class="flex items-center gap-5">
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/ragil.zakaria" target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-white transition-colors" aria-label="Instagram">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/ragilzakaria" target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-white transition-colors" aria-label="LinkedIn">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <!-- GitHub -->
+          <a href="https://www.github.com/ragilzakaria" target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-white transition-colors" aria-label="GitHub">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+          </a>
+          <!-- Medium -->
+          <a href="https://www.medium.com/@ragilzakaria" target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-white transition-colors" aria-label="Medium">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42c1.87 0 3.38 2.88 3.38 6.42zM24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75c.66 0 1.19 2.58 1.19 5.75z"/>
+            </svg>
+          </a>
+          <!-- Mail -->
+          <a href="mailto:ragil.zakaria@gmail.com" class="text-zinc-500 hover:text-white transition-colors" aria-label="Email">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Initialize Lucide Icons & load main.js -->
+  <script>
+    lucide.createIcons();
+  </script>
+  <script src="./main.js"></script>
+</body>
+</html>

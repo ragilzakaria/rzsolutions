@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RZ Solutions | AI & Software Engineering Consultant</title>
+  <meta name="description" content="Freelance portfolio of RZ Solutions, specializing in Chemistry, AI, Machine Learning, Hybrid RAG, and Full Stack Software Engineering. Based in West Java, Indonesia.">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0fdfa',
+              100: '#ccfbf1',
+              200: '#99f6e4',
+              300: '#5eead4',
+              400: '#2dd4bf',
+              500: '#14b8a6',
+              600: '#0d9488',
+              700: '#0f766e',
+              800: '#115e59',
+              900: '#134e4a',
+              950: '#042f2e',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="./style.css">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 min-h-screen flex flex-col bg-grid-pattern relative radial-glow-container">
+  
+  <!-- Radial Glow Follower Background -->
+  <div class="radial-glow absolute inset-0 pointer-events-none z-0"></div>
+
+  <!-- Header / Navigation -->
+  <header class="glass-nav sticky top-0 w-full z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-teal-500 to-cyan-400 flex items-center justify-center shadow-lg shadow-teal-500/20 group-hover:shadow-teal-500/40 transition-all duration-300">
+            <span class="font-mono text-xl font-bold text-zinc-950">RZ</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-white font-bold leading-none text-base group-hover:text-teal-400 transition-colors">RZ Solutions</span>
+            <span class="text-[10px] text-zinc-400 font-mono tracking-wider">AI & SOFTWARE ENG</span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link text-zinc-400 hover:text-white text-sm font-medium transition-colors">Home</a>
+          <a href="about.html" class="nav-link text-zinc-400 hover:text-white text-sm font-medium transition-colors">About</a>
+          <a href="services.html" class="nav-link text-zinc-400 hover:text-white text-sm font-medium transition-colors">Services</a>
+          <a href="contact.html" class="nav-link text-zinc-400 hover:text-white text-sm font-medium transition-colors">Contact</a>
+        </nav>
+
+        <!-- Desktop Action -->
+        <div class="hidden md:block">
+          <a href="contact.html" class="px-5 py-2.5 bg-zinc-900 hover:bg-zinc-800 text-teal-400 border border-teal-500/30 hover:border-teal-500/60 text-sm font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-teal-500/10">
+            Hire Me
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-btn" type="button" class="p-2.5 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-900 transition-colors focus:outline-none" aria-expanded="false">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-900 bg-zinc-950/95 backdrop-blur-lg">
+      <div class="px-2 pt-3 pb-4 space-y-1">
+        <a href="index.html" class="block px-4 py-3 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-900 text-base font-medium">Home</a>
+        <a href="about.html" class="block px-4 py-3 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-900 text-base font-medium">About</a>
+        <a href="services.html" class="block px-4 py-3 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-900 text-base font-medium">Services</a>
+        <a href="contact.html" class="block px-4 py-3 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-900 text-base font-medium">Contact</a>
+        <div class="pt-4 pb-2 px-4 border-t border-zinc-900">
+          <a href="contact.html" class="block w-full py-3 bg-teal-500 text-zinc-950 text-center font-bold rounded-xl shadow-lg shadow-teal-500/20">
+            Hire Me
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="flex-grow z-10">
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Column 1: Info and CTA -->
+          <div class="lg:col-span-7 flex flex-col space-y-6 text-left">
+            
+            <!-- Badges -->
+            <div class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full border border-teal-500/20 bg-teal-500/5 text-teal-400 font-mono text-xs w-fit">
+              <span class="flex h-2 w-2 relative">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
+              </span>
+              Available for Freelance & Consultation
+            </div>
+
+            <!-- Title -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+              Developing <span class="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent text-glow-teal">Custom AI Systems</span> & Digital Solutions
+            </h1>
+
+            <p class="text-zinc-400 text-lg sm:text-xl max-w-2xl leading-relaxed">
+              I'm <span class="text-white font-semibold">Ragil Zakaria</span>, a Forward Deployed Engineer at <a href="https://www.kulkul.tech" target="_blank" rel="noopener noreferrer" class="text-teal-400 hover:text-teal-300 font-semibold inline-flex items-center gap-1">Kulkul Technology <i data-lucide="external-link" class="w-3 h-3 inline"></i></a> and a Tech Consultant. I specialize in developing custom artificial intelligence pipelines, high-throughput streaming systems, and responsive full-stack applications, drawing on my background in computational chemistry.
+            </p>
+
+            <!-- Tech Stack Pills -->
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="px-3 py-1 bg-zinc-900 border border-zinc-800 rounded-md font-mono text-xs text-zinc-400">Python</span>
+              <span class="px-3 py-1 bg-zinc-900 border border-zinc-800 rounded-md font-mono text-xs text-zinc-400">Angular</span>
+              <span class="px-3 py-1 bg-zinc-900 border border-zinc-800 rounded-md font-mono text-xs text-zinc-400">React</span>
+              <span class="px-3 py-1 bg-zinc-900 border border-zinc-800 rounded-md font-mono text-xs text-zinc-400">Deepstream</span>
+              <span class="px-3 py-1 bg-zinc-900 border border-zinc-800 rounded-md font-mono text-xs text-zinc-400">Docker</span>
+              <span class="px-3 py-1 bg-zinc-900 border border-zinc-800 rounded-md font-mono text-xs text-zinc-400">Hybrid RAG</span>
+            </div>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+              <a href="contact.html" class="px-8 py-4 bg-teal-500 hover:bg-teal-400 text-zinc-950 font-bold rounded-xl transition-all duration-300 text-center shadow-lg shadow-teal-500/25 hover:shadow-teal-500/40 transform hover:-translate-y-0.5">
+                Work With Me
+              </a>
+              <a href="services.html" class="px-8 py-4 bg-zinc-900 hover:bg-zinc-850 text-white font-semibold rounded-xl border border-zinc-800 hover:border-zinc-700 transition-all duration-300 text-center flex items-center justify-center gap-2">
+                Explore Services
+                <i data-lucide="arrow-right" class="w-4 h-4 text-teal-400"></i>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Column 2: Visual Graphic -->
+          <div class="lg:col-span-5 flex justify-center items-center">
+            <div class="relative w-full max-w-md aspect-video lg:aspect-square rounded-2xl overflow-hidden shadow-2xl shadow-teal-500/5 glow-card">
+              <!-- Visual overlay borders -->
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent z-10"></div>
+              <!-- AI/Chemistry Visual -->
+              <img src="assets/images/hero-bg.jpg" alt="AI Neural Net and Computational Chemistry Connections" class="w-full h-full object-cover animate-pulse-slow">
+              <!-- Float overlay panel -->
+              <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl glass-panel border border-zinc-800/80 z-20">
+                <div class="flex items-center gap-3">
+                  <div class="w-2.5 h-2.5 rounded-full bg-teal-500 animate-ping"></div>
+                  <span class="font-mono text-xs text-zinc-400">Current Simulation: Stable Node</span>
+                </div>
+                <div class="mt-1 text-sm font-semibold text-white font-mono">
+                  Hybrid RAG Pipeline Optimization
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Overview Teaser Section -->
+    <section class="py-16 bg-zinc-900/40 border-y border-zinc-900 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+          <div>
+            <h2 class="text-xs font-semibold uppercase tracking-wider text-teal-400 font-mono mb-2">Capabilities</h2>
+            <h3 class="text-3xl font-bold text-white">Engineered Solutions</h3>
+          </div>
+          <a href="services.html" class="mt-4 md:mt-0 text-teal-400 hover:text-teal-300 font-semibold inline-flex items-center gap-2 group transition-colors">
+            See all detailed services
+            <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Card 1 -->
+          <div class="p-6 rounded-2xl glass-panel glow-card flex flex-col justify-between min-h-[220px]">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/20 text-teal-400 flex items-center justify-center mb-5">
+                <i data-lucide="cpu" class="w-6 h-6"></i>
+              </div>
+              <h4 class="text-xl font-bold text-white mb-2">AI & Data Optimization</h4>
+              <p class="text-zinc-400 text-sm leading-relaxed">
+                Structuring data channels and orchestrating state-of-the-art LLM vector storage models using Hybrid RAG systems.
+              </p>
+            </div>
+            <div class="mt-6 flex items-center gap-1.5 text-xs text-teal-400 font-mono">
+              <span>View details</span>
+              <i data-lucide="chevron-right" class="w-3 h-3"></i>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="p-6 rounded-2xl glass-panel glow-card flex flex-col justify-between min-h-[220px]">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center mb-5">
+                <i data-lucide="layers" class="w-6 h-6"></i>
+              </div>
+              <h4 class="text-xl font-bold text-white mb-2">Full Stack Web</h4>
+              <p class="text-zinc-400 text-sm leading-relaxed">
+                Building highly interactive, secure, and performant web interfaces integrated with underlying AI APIs and complex databases.
+              </p>
+            </div>
+            <div class="mt-6 flex items-center gap-1.5 text-xs text-cyan-400 font-mono">
+              <span>View details</span>
+              <i data-lucide="chevron-right" class="w-3 h-3"></i>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="p-6 rounded-2xl glass-panel glow-card flex flex-col justify-between min-h-[220px]">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center mb-5">
+                <i data-lucide="activity" class="w-6 h-6"></i>
+              </div>
+              <h4 class="text-xl font-bold text-white mb-2">Custom ML Solutions</h4>
+              <p class="text-zinc-400 text-sm leading-relaxed">
+                Deploying high-throughput video intelligence models (Deepstream) and applying machine learning to complex chemistry frameworks.
+              </p>
+            </div>
+            <div class="mt-6 flex items-center gap-1.5 text-xs text-indigo-400 font-mono">
+              <span>View details</span>
+              <i data-lucide="chevron-right" class="w-3 h-3"></i>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="p-6 rounded-2xl glass-panel glow-card flex flex-col justify-between min-h-[220px]">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/20 text-violet-400 flex items-center justify-center mb-5">
+                <i data-lucide="music" class="w-6 h-6"></i>
+              </div>
+              <h4 class="text-xl font-bold text-white mb-2">Session Guitarist</h4>
+              <p class="text-zinc-400 text-sm leading-relaxed">
+                Providing professional live accompaniment and studio guitar tracking backed by 8+ years of acoustic and classical experience.
+              </p>
+            </div>
+            <div class="mt-6 flex items-center gap-1.5 text-xs text-violet-400 font-mono">
+              <span>View details</span>
+              <i data-lucide="chevron-right" class="w-3 h-3"></i>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="p-6 rounded-2xl glass-panel glow-card flex flex-col justify-between min-h-[220px]">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-5">
+                <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+              </div>
+              <h4 class="text-xl font-bold text-white mb-2">1-on-1 Tutoring & Mentorship</h4>
+              <p class="text-zinc-400 text-sm leading-relaxed">
+                Personalized instruction in computer programming, chemistry, and guitar, custom-tailored for your pace.
+              </p>
+            </div>
+            <div class="mt-6 flex items-center gap-1.5 text-xs text-emerald-400 font-mono">
+              <span>View details</span>
+              <i data-lucide="chevron-right" class="w-3 h-3"></i>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="py-20 bg-zinc-950 border-t border-zinc-900/50 fade-in-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+          <div>
+            <h2 class="text-xs font-semibold uppercase tracking-wider text-teal-400 font-mono mb-2">Portfolio</h2>
+            <h3 class="text-3xl sm:text-4xl font-bold text-white">Featured Projects</h3>
+            <p class="text-zinc-400 mt-3 text-sm max-w-xl">A selection of engineering solutions, from simulation dashboards to real-time machine learning pipelines.</p>
+          </div>
+          <a href="about.html#journey" class="mt-4 md:mt-0 text-teal-400 hover:text-teal-350 font-semibold inline-flex items-center gap-2 group transition-colors text-sm">
+            View full professional timeline
+            <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Project 1: GasGun Simulation Tool -->
+          <div class="group rounded-2xl bg-zinc-900/40 border border-zinc-850 overflow-hidden hover:border-teal-500/30 transition-all duration-300 flex flex-col">
+            <div class="aspect-video w-full overflow-hidden relative border-b border-zinc-850">
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/20 via-transparent to-transparent z-10"></div>
+              <img src="assets/images/gasgun.jpg" alt="GasGun Simulation Tool Dashboard" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500">
+              <span class="absolute top-4 right-4 z-20 px-2.5 py-1 bg-zinc-950/90 border border-zinc-800 rounded-md font-mono text-[9px] text-teal-400 uppercase font-bold tracking-wider">Internship Project</span>
+            </div>
+            <div class="p-6 flex-grow flex flex-col justify-between">
+              <div>
+                <h4 class="text-lg font-bold text-white mb-2 group-hover:text-teal-400 transition-colors">GasGun Petroleum Simulator</h4>
+                <p class="text-zinc-400 text-xs leading-relaxed mb-4">
+                  Developed core features for a web-based simulation platform in petroleum engineering using Python and Angular. Assisted in performance enhancements and performed Root Cause Analysis (RCA) using Unix utilities and SQL to identify database latency spikes.
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-1.5 pt-4 border-t border-zinc-850">
+                <span class="px-2 py-0.5 rounded bg-zinc-950 border border-zinc-900 text-[10px] font-mono text-zinc-500">Python</span>
+                <span class="px-2 py-0.5 rounded bg-zinc-950 border border-zinc-900 text-[10px] font-mono text-zinc-500">Angular</span>
+                <span class="px-2 py-0.5 rounded bg-zinc-950 border border-zinc-900 text-[10px] font-mono text-zinc-500">SQL</span>
+                <span class="px-2 py-0.5 rounded bg-zinc-950 border border-zinc-900 text-[10px] font-mono text-zinc-500">Unix Tools</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: AI-Powered Autonomous RC Vehicle -->
+          <div class="group rounded-2xl bg-zinc-900/40 border border-zinc-850 overflow-hidden hover:border-teal-500/30 transition-all duration-300 flex flex-col">
+            <div class="aspect-video w-full overflow-hidden relative border-b border-zinc-850">
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/20 via-transparent to-transparent z-10"></div>
+              <img src="assets/images/rc_vehicle.jpg" alt="AI-Powered RC Vehicle" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500">
+              <span class="absolute top-4 right-4 z-20 px-2.5 py-1 bg-zinc-950/90 border border-zinc-800 rounded-md font-mono text-[9px] text-teal-400 uppercase font-bold tracking-wider">Freelance AI Project</span>
+            </div>
+            <div class="p-6 flex-grow flex flex-col justify-between">
+              <div>
+                <h4 class="text-lg font-bold text-white mb-2 group-hover:text-teal-400 transition-colors">Autonomous RC Navigation System</h4>
+                <p class="text-zinc-400 text-xs leading-relaxed mb-4">
+                  Built and deployed a small-scale autonomous RC vehicle integrating computer vision. Used predictive deep models to achieve real-time navigation mapping, obstacle grouping, and trajectory adjustment.
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-1.5 pt-4 border-t border-zinc-850">
+                <span class="px-2 py-0.5 rounded bg-zinc-950 border border-zinc-900 text-[10px] font-mono text-zinc-500">Computer Vision</span>
+                <span class="px-2 py-0.5 rounded bg-zinc-950 border border-zinc-900 text-[10px] font-mono text-zinc-500">Edge AI</span>
+                <span class="px-2 py-0.5 rounded bg-zinc-950 border border-zinc-900 text-[10px] font-mono text-zinc-500">Navigation</span>
+                <span class="px-2 py-0.5 rounded bg-zinc-950 border border-zinc-900 text-[10px] font-mono text-zinc-500">Python</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: 3D Scaffold Printing Optimizer -->
+          <div class="group rounded-2xl bg-zinc-900/40 border border-zinc-850 overflow-hidden hover:border-teal-500/30 transition-all duration-300 flex flex-col">
+            <div class="aspect-video w-full overflow-hidden relative border-b border-zinc-850">
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/20 via-transparent to-transparent z-10"></div>
+              <img src="assets/images/scaffold.jpg?v=1" alt="3D Scaffold Printing Optimizer" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500">
+              <span class="absolute top-4 right-4 z-20 px-2.5 py-1 bg-zinc-950/90 border border-zinc-800 rounded-md font-mono text-[9px] text-teal-400 uppercase font-bold tracking-wider">Freelance AI Project</span>
+            </div>
+            <div class="p-6 flex-grow flex flex-col justify-between">
+              <div>
+                <h4 class="text-lg font-bold text-white mb-2 group-hover:text-teal-400 transition-colors">Bio-Scaffold Lattice Optimizer</h4>
+                <p class="text-zinc-400 text-xs leading-relaxed mb-4">
+                  Developed customized CLI tools and integrated machine learning algorithms to optimize 3D scaffold printing settings. Provided precise optimization layers to assist a PhD researcher in Materials Science at Eindhoven University.
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-1.5 pt-4 border-t border-zinc-850">
+                <span class="px-2 py-0.5 rounded bg-zinc-950 border border-zinc-900 text-[10px] font-mono text-zinc-500">CLI Tooling</span>
+                <span class="px-2 py-0.5 rounded bg-zinc-950 border border-zinc-900 text-[10px] font-mono text-zinc-500">Machine Learning</span>
+                <span class="px-2 py-0.5 rounded bg-zinc-950 border border-zinc-900 text-[10px] font-mono text-zinc-500">3D Lattice</span>
+                <span class="px-2 py-0.5 rounded bg-zinc-950 border border-zinc-900 text-[10px] font-mono text-zinc-500">Materials Science</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: Bioscience Consulting Website -->
+          <div class="group rounded-2xl bg-zinc-900/40 border border-zinc-850 overflow-hidden hover:border-teal-500/30 transition-all duration-300 flex flex-col">
+            <div class="aspect-video w-full overflow-hidden relative border-b border-zinc-850">
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/20 via-transparent to-transparent z-10"></div>
+              <img src="assets/images/bioscience.jpg" alt="Bioscience Consulting Website" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500">
+              <span class="absolute top-4 right-4 z-20 px-2.5 py-1 bg-zinc-950/90 border border-zinc-800 rounded-md font-mono text-[9px] text-teal-400 uppercase font-bold tracking-wider">Web Project</span>
+            </div>
+            <div class="p-6 flex-grow flex flex-col justify-between">
+              <div>
+                <h4 class="text-lg font-bold text-white mb-2 group-hover:text-teal-400 transition-colors">Bioscience Consulting Platform</h4>
+                <p class="text-zinc-400 text-xs leading-relaxed mb-4">
+                  Constructed a high-fidelity website and content infrastructure for a Bioscience Consulting firm. Integrated clean UI typography, modern layout nodes, and interactive visualization matrices for biochemical services.
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-1.5 pt-4 border-t border-zinc-850">
+                <span class="px-2 py-0.5 rounded bg-zinc-950 border border-zinc-900 text-[10px] font-mono text-zinc-500">HTML / CSS</span>
+                <span class="px-2 py-0.5 rounded bg-zinc-950 border border-zinc-900 text-[10px] font-mono text-zinc-500">JavaScript</span>
+                <span class="px-2 py-0.5 rounded bg-zinc-950 border border-zinc-900 text-[10px] font-mono text-zinc-500">UI / UX</span>
+                <span class="px-2 py-0.5 rounded bg-zinc-950 border border-zinc-900 text-[10px] font-mono text-zinc-500">Tailwind CSS</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 fade-in-section">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-teal-400 font-mono mb-2">Endorsements</h2>
+          <h3 class="text-3xl sm:text-4xl font-bold text-white">What Mentors & Clients Say</h3>
+          <p class="text-zinc-400 mt-4">
+            Hear from academic supervisors and industry professionals about the quality of my technical architectures and collaborative delivery.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Testimonial 1 -->
+          <div class="p-8 rounded-2xl bg-zinc-900/60 border border-zinc-800/80 flex flex-col justify-between relative hover:border-zinc-700/85 transition-colors">
+            <div class="absolute top-6 right-8 text-zinc-800">
+              <i data-lucide="quote" class="w-10 h-10 opacity-20"></i>
+            </div>
+            <div>
+              <!-- Stars -->
+              <div class="flex items-center gap-1 text-teal-400 mb-6">
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              </div>
+              <p class="text-zinc-300 italic leading-relaxed text-sm mb-8">
+                "His remarkable character is defined by emotional stability, maturity, and a strong sense of purpose. These qualities have been the foundation of his outstanding success, both academically and socially."
+              </p>
+            </div>
+            <div class="flex items-center gap-4 pt-6 border-t border-zinc-800/65">
+              <div class="w-10 h-10 rounded-full bg-teal-500/10 border border-teal-500/25 flex items-center justify-center text-teal-400 font-bold text-sm">
+                TW
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Prof. Dra. Tutik Dwi Wahyuningsih, M.Si., Ph.D.</h4>
+                <p class="text-[11px] text-zinc-500 font-mono">Professor of Chemistry, UGM</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="p-8 rounded-2xl bg-zinc-900/60 border border-zinc-800/80 flex flex-col justify-between relative hover:border-zinc-700/85 transition-colors">
+            <div class="absolute top-6 right-8 text-zinc-800">
+              <i data-lucide="quote" class="w-10 h-10 opacity-20"></i>
+            </div>
+            <div>
+              <!-- Stars -->
+              <div class="flex items-center gap-1 text-teal-400 mb-6">
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              </div>
+              <p class="text-zinc-300 italic leading-relaxed text-sm mb-8">
+                "Maulana works as a freelancer on several of our projects, including 3D printing, café POS, reservation systems, and website development. He consistently delivers on time and within budget."
+              </p>
+            </div>
+            <div class="flex items-center gap-4 pt-6 border-t border-zinc-800/65">
+              <div class="w-10 h-10 rounded-full bg-cyan-500/10 border border-cyan-500/25 flex items-center justify-center text-cyan-400 font-bold text-sm">
+                AB
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Abdu</h4>
+                <p class="text-[11px] text-zinc-500 font-mono">Kulkul Tech</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="p-8 rounded-2xl bg-zinc-900/60 border border-zinc-800/80 flex flex-col justify-between relative hover:border-zinc-700/85 transition-colors">
+            <div class="absolute top-6 right-8 text-zinc-800">
+              <i data-lucide="quote" class="w-10 h-10 opacity-20"></i>
+            </div>
+            <div>
+              <!-- Stars -->
+              <div class="flex items-center gap-1 text-teal-400 mb-6">
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              </div>
+              <p class="text-zinc-300 italic leading-relaxed text-sm mb-8">
+                "Ragil possesses an exceptional talent for computational modeling. His transition from chemical science concepts to advanced machine learning demonstrates a rare capability to construct rigorous, optimized algorithms. His work is meticulous and highly structured."
+              </p>
+            </div>
+            <div class="flex items-center gap-4 pt-6 border-t border-zinc-800/65">
+              <div class="w-10 h-10 rounded-full bg-indigo-500/10 border border-indigo-500/25 flex items-center justify-center text-indigo-400 font-bold text-sm">
+                WC
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Dr. Sc. Aulia Sukma Hutama, S.Si, M.Si.</h4>
+                <p class="text-[11px] text-zinc-500 font-mono">Academic Mentor & Researcher, UGM</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Final Call to Action -->
+    <section class="py-16 bg-gradient-to-t from-teal-950/20 to-transparent border-t border-zinc-900">
+      <div class="max-w-5xl mx-auto px-4 text-center">
+        <h3 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Let's Design Your Next Solution</h3>
+        <p class="text-zinc-400 mt-4 text-base sm:text-lg max-w-xl mx-auto">
+          Need a containerized AI model, optimized vector pipeline, or a full-stack interface? Let's discuss your custom technical specifications.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
+          <a href="contact.html" class="px-8 py-3.5 bg-teal-500 hover:bg-teal-400 text-zinc-950 font-bold rounded-xl transition-all duration-300">
+            Get in Touch
+          </a>
+          <a href="about.html" class="px-8 py-3.5 bg-zinc-900 hover:bg-zinc-800 text-zinc-300 font-semibold rounded-xl border border-zinc-850 hover:border-zinc-700 transition-colors">
+            Read My Bio
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-zinc-950 border-t border-zinc-900 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        
+        <!-- Logo and Brand -->
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-8 rounded-lg bg-teal-500 flex items-center justify-center">
+              <span class="font-mono text-base font-bold text-zinc-950">RZ</span>
+            </div>
+            <span class="text-white font-bold text-lg">RZ Solutions</span>
+          </div>
+          <p class="text-zinc-500 text-sm max-w-sm">
+            Independent software engineering & AI consultant, transforming technical complexities into functional, production-ready systems.
+          </p>
+        </div>
+
+        <!-- Sitemap Quicklinks -->
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-teal-500 font-mono mb-4">Sitemap</h4>
+          <ul class="space-y-2 text-sm text-zinc-400">
+            <li><a href="index.html" class="hover:text-teal-400 transition-colors">Home</a></li>
+            <li><a href="about.html" class="hover:text-teal-400 transition-colors">About</a></li>
+            <li><a href="services.html" class="hover:text-teal-400 transition-colors">Services</a></li>
+            <li><a href="contact.html" class="hover:text-teal-400 transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Location Info -->
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-teal-500 font-mono mb-4">Location</h4>
+          <p class="text-sm text-zinc-400 flex items-start gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-teal-400 shrink-0 mt-0.5"></i>
+            <span>West Java, Indonesia<br><span class="text-zinc-500 text-xs">Available for remote work globally</span></span>
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-zinc-500">
+          &copy; 2026 RZ Solutions. All rights reserved.
+        </p>
+        
+        <!-- Socials -->
+        <div class="flex items-center gap-5">
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/ragil.zakaria" target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-white transition-colors" aria-label="Instagram">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/ragilzakaria" target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-white transition-colors" aria-label="LinkedIn">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <!-- GitHub -->
+          <a href="https://www.github.com/ragilzakaria" target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-white transition-colors" aria-label="GitHub">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+          </a>
+          <!-- Medium -->
+          <a href="https://www.medium.com/@ragilzakaria" target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-white transition-colors" aria-label="Medium">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42c1.87 0 3.38 2.88 3.38 6.42zM24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75c.66 0 1.19 2.58 1.19 5.75z"/>
+            </svg>
+          </a>
+          <!-- Mail -->
+          <a href="mailto:ragil.zakaria@gmail.com" class="text-zinc-500 hover:text-white transition-colors" aria-label="Email">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Initialize Lucide Icons & load main.js -->
+  <script>
+    lucide.createIcons();
+  </script>
+  <script src="./main.js"></script>
+</body>
+</html>

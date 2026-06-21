@@ -1,0 +1,147 @@
+/* Custom Styles for RZ Solutions Portfolio */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --color-zinc-950: #09090b;
+  --color-zinc-900: #18181b;
+  --color-zinc-800: #27272a;
+  --color-cyan-500: #06b6d4;
+  --color-teal-500: #14b8a6;
+  --color-indigo-500: #6366f1;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-zinc-950);
+  color: #f4f4f5;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-zinc-950);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-zinc-800);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-teal-500);
+}
+
+/* Background Grids and Overlays */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(39, 39, 42, 0.2) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(39, 39, 42, 0.2) 1px, transparent 1px);
+}
+
+.radial-glow {
+  background: radial-gradient(circle 800px at var(--x, 50%) var(--y, 50%), rgba(20, 184, 166, 0.08), transparent 80%);
+}
+
+.glow-card {
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(63, 63, 70, 0.4);
+}
+
+.glow-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(45deg, var(--color-teal-500), var(--color-cyan-500), var(--color-indigo-500));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-card:hover {
+  transform: translateY(-4px);
+  border-color: transparent;
+  box-shadow: 0 10px 30px -10px rgba(20, 184, 166, 0.2);
+}
+
+.glow-card:hover::before {
+  opacity: 0.15;
+}
+
+/* Glowing text effects */
+.text-glow-teal {
+  text-shadow: 0 0 10px rgba(20, 184, 166, 0.4);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 10px rgba(6, 182, 212, 0.4);
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(24, 24, 27, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(63, 63, 70, 0.5);
+}
+
+.glass-nav {
+  background: rgba(9, 9, 11, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(39, 39, 42, 0.8);
+}
+
+/* Page Transition / Fade In */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Active Nav State styling */
+.nav-link-active {
+  color: var(--color-teal-500);
+  position: relative;
+}
+
+.nav-link-active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-teal-500);
+  border-radius: 2px;
+}
