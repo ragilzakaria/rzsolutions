@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services | RZ Solutions</title>
   <meta name="description" content="Explore freelance technical consulting services including AI & Data Optimization, Full Stack Web Engineering, and Custom Machine Learning solutions.">
-  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  
+
+  
+
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -15,18 +19,76 @@
       theme: {
         extend: {
           colors: {
+            white: '#18201a',
+            zinc: {
+              50: '#0c0d0c',
+              100: '#18201a',
+              200: '#252f27',
+              300: '#39453b',
+              400: '#4e5d50',
+              500: '#798c79',
+              600: '#a2b0a2',
+              700: '#bdc6bd',
+              800: '#d5dad4',
+              850: '#d5dad4',
+              900: '#ffffff',
+              955: '#f2f3ee',
+              950: '#f2f3ee',
+            },
+            teal: {
+              50: '#f4f6f4',
+              100: '#e5ece7',
+              200: '#cbe0d3',
+              300: '#a3c4b1',
+              350: '#5a8f71',
+              400: '#395c48',
+              500: '#426a53',
+              600: '#32523f',
+              700: '#243c2e',
+              800: '#192a20',
+              900: '#111d16',
+              950: '#080d0a',
+            },
+            cyan: {
+              50: '#fdfdf6',
+              100: '#faf9e6',
+              200: '#f5f2cc',
+              300: '#ebe398',
+              355: '#dcb858',
+              400: '#cca03d',
+              500: '#dca842',
+              600: '#b38730',
+              700: '#8c6823',
+              800: '#664a17',
+              900: '#3d2b0e',
+              950: '#1f1405',
+            },
+            indigo: {
+              50: '#faf6f7',
+              100: '#f4e9ed',
+              200: '#ebd1da',
+              300: '#dba9bc',
+              355: '#a35770',
+              400: '#6b3547',
+              500: '#7d3d52',
+              600: '#5e2c3c',
+              700: '#471f2b',
+              800: '#30131c',
+              900: '#1c070d',
+              950: '#0d0205',
+            },
             brand: {
-              50: '#f0fdfa',
-              100: '#ccfbf1',
-              200: '#99f6e4',
-              300: '#5eead4',
-              400: '#2dd4bf',
-              500: '#14b8a6',
-              600: '#0d9488',
-              700: '#0f766e',
-              800: '#115e59',
-              900: '#134e4a',
-              950: '#042f2e',
+              50: '#f4f6f4',
+              100: '#e5ece7',
+              200: '#cbe0d3',
+              300: '#a3c4b1',
+              400: '#395c48',
+              500: '#426a53',
+              600: '#32523f',
+              700: '#243c2e',
+              800: '#192a20',
+              900: '#111d16',
+              950: '#080d0a',
             }
           },
           fontFamily: {
@@ -55,9 +117,7 @@
         
         <!-- Logo -->
         <a href="index.html" class="flex items-center gap-3 group">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-teal-500 to-cyan-400 flex items-center justify-center shadow-lg shadow-teal-500/20 group-hover:shadow-teal-500/40 transition-all duration-300">
-            <span class="font-mono text-xl font-bold text-zinc-950">RZ</span>
-          </div>
+          <img src="assets/images/logo.png" alt="RZ Solutions Logo" class="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-105">
           <div class="flex flex-col">
             <span class="text-white font-bold leading-none text-base group-hover:text-teal-400 transition-colors">RZ Solutions</span>
             <span class="text-[10px] text-zinc-400 font-mono tracking-wider">AI & SOFTWARE ENG</span>
@@ -520,9 +580,7 @@
         <!-- Logo and Brand -->
         <div class="md:col-span-2">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-8 h-8 rounded-lg bg-teal-500 flex items-center justify-center">
-              <span class="font-mono text-base font-bold text-zinc-950">RZ</span>
-            </div>
+            <img src="assets/images/logo.png" alt="RZ Solutions Logo" class="w-8 h-8 object-contain">
             <span class="text-white font-bold text-lg">RZ Solutions</span>
           </div>
           <p class="text-zinc-500 text-sm max-w-sm">
